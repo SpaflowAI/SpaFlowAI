@@ -1,0 +1,142 @@
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-teal: #2A9D8F;
+  --color-deep-blue: #264653;
+  --color-soft-gold: #E9C46A;
+  --color-off-white: #F8F9FA;
+  --color-dark-gray: #333333;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--color-dark-gray);
+  background-color: var(--color-off-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.accent-text {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-6 rounded-md transition-colors;
+}
+
+.btn-secondary {
+  @apply border border-teal-600 text-teal-600 hover:bg-teal-50 font-medium py-3 px-6 rounded-md transition-colors;
+}
+
+/* Custom section styles */
+.section {
+  @apply py-16 md:py-24;
+}
+
+/* Custom card styles */
+.feature-card {
+  @apply bg-white p-6 rounded-lg shadow-md transition-all duration-300;
+}
+
+.feature-card:hover {
+  @apply shadow-lg transform -translate-y-1;
+}
+
+/* Custom form styles */
+.form-input {
+  @apply w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent;
+}
+
+.form-input-dark {
+  @apply w-full px-4 py-2 rounded-md bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50;
+}
+
+/* Mobile menu transition */
+.mobile-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.mobile-menu-exit {
+  opacity: 1;
+}
+
+.mobile-menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms, transform 200ms;
+}
+
+/* Responsive image handling */
+.responsive-image {
+  @apply w-full h-auto object-cover;
+}
+
+/* Custom gradient backgrounds */
+.bg-gradient-spa {
+  background: linear-gradient(135deg, var(--color-teal), var(--color-deep-blue));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-teal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #218377;
+}
+
+/* Optimizations for mobile */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
